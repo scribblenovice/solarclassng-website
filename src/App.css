@@ -1,0 +1,299 @@
+:root {
+  --solar-green: #4CAF50;
+  --solar-blue: #005D9A;
+}
+
+.solargreen-bg{
+background-color: var(--solar-green);
+}
+
+.solarblue-bg{
+  background: rgb(0,93,154);
+background: linear-gradient(180deg, rgba(0, 92, 154, 0.829) 33%, rgba(76, 175, 79, 0.849) 74%);
+/* background-color: var(--solar-blue); */
+}
+.solarblue{
+    color: var(--solar-blue);
+}
+
+.solargreen{
+    color: var(--solar-green);
+}
+body {
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track {
+  background: #f7f7f7;
+  border: 0px none #ffffff;
+  border-radius: 41px;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.navbar li {
+  cursor: pointer;
+}
+.solarbg {
+  background-image: url(./assets/solar-install.jpg);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+}
+.accessbg {
+  background-image: url(./assets/carousel/accessbg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+}
+.ictbg {
+  background-image: url(./assets/carousel/ictbg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+}
+.techbg {
+  background-image: url(./assets/carousel/techbg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+}
+
+.bar {
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin: 8px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-13px) rotate(-45deg);
+}
+
+
+@keyframes open {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes close {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+h1,
+.anta {
+  font-family: "Anta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust height as needed */
+}
+
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.move {
+  animation: scaleInOut 7s alternate;
+}
+
+@keyframes scaleInOut {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
+
+.carousel-indicators {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-indicator {
+  box-shadow: 0px 0px 20px black;
+  /* background: rgba(255, 255, 255, 0.5); */
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all linear 0.3s;
+}
+
+.carousel-indicator.active {
+  box-shadow: 0px 0px 20px white;
+  transform: scale(1.2);
+}
+.carousel-slide {
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.carousel-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ); /* Adjust the colors and opacity as needed */
+}
+.openNav {
+  transform: translateX(0%);
+}
+.closeNav {
+  transform: translateX(-100%);
+}
+
+.visionbg {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 40%,
+    rgba(76, 175, 79, 0.349) 60%
+  );
+  /* background: url(../src/assets/logo.png); */
+}
+.aboutbg {
+  background: url(../src/assets/solar-install.jpg);
+}
+.aboutimg {
+  box-shadow: -10px 10px 0px var(--solar-green);
+}
+.about {
+  color: white;
+  background: var(--solar-blue);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.about.inview,
+.about:hover {
+  background: black;
+  color: white;
+  box-shadow: 1px 1px 17px black;
+}
+.mission {
+  color: white;
+  background: var(--solar-blue);
+  animation: loadRight 0.7s;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.mission.inview,
+.mission:hover {
+  background: black;
+  color: white;
+  box-shadow: 1px 1px 17px black;
+}
+
+.shift {
+  animation: point 5s linear infinite forwards;
+}
+@keyframes point {
+  0% {
+    transform: translate(5px, 5px);
+  }
+  50% {
+    transform: translate(-5px, -5px);
+  }
+  100% {
+    transform: translate(5px, 5px);
+  }
+}
+.in-view {
+  animation: increase 1s linear;
+}
+@keyframes increase {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.shadow {
+  box-shadow: 10px 10px 5px black;
+}
+.servicebg{
+ background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 60%,
+    rgba(0, 92, 154, 0.205) 80%
+  );
+}

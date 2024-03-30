@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.siliguri {
+  font-family: "Hind Siliguri", sans-serif;
+  font-style: normal;
+}
+.solar-service{
+  background-image: url(./assets/services/solar-install.jpg);
+}
+.shake {
+  animation: shake 0.3s linear;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(5px);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
