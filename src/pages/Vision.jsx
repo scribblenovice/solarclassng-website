@@ -5,7 +5,7 @@ const Vision = () => {
     <>
       <section
         id="about"
-        class="visionbg h-fit mx-auto w-4.5/5 py-20 flex items-center"
+        class="servicebg h-fit mx-auto w-4.5/5 py-20 flex items-center"
       >
         <Fade bottom>
           <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -15,7 +15,7 @@ const Vision = () => {
                   OUR VISION
                 </h2>
               </div>
-              <p class="pl-4 my-5 siliguri">
+              <p class="pl-4 my-5 siliguri text-lg">
                 To be a leading technology company underpinned by sustainable
                 development best practices within Nigeria and beyond.
               </p>
@@ -26,7 +26,7 @@ const Vision = () => {
                   OUR MISSION / OBJECTIVE
                 </h2>
               </div>
-              <p class="pl-4 my-5 siliguri">
+              <p class="pl-4 my-5 siliguri text-lg">
                 To deliver world class services to our clients and create
                 enabling work environment that help our workers be the best they
                 can be. To be a responsible corporate organization that deliver

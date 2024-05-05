@@ -19,7 +19,7 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post("/receive-email", (req, res) => {
-    console.log(req.body)
+    console.log(req.body);
   const { name, email, subject, message } = req.body;
   const mailOptions = {
     from: email,

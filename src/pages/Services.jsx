@@ -14,12 +14,11 @@ const Services = () => {
               className="in-view"
               otherclass={`mb-5 h-1 bg-white`}
             />
-            <div className="pb-2 mx-auto border-b-4 border-green-500 w-fit">
-              <h2 className="text-white text-3xl font-black md:text-5xl anta">
-                OUR SERVICES
-              </h2>
-            </div>
-            <p className="siliguri text-white text-center py-14 text-xl lg:text-2xl font-light tracking-wide">
+
+            <h2 className="text-white text-center text-3xl font-black md:text-5xl anta">
+              OUR SERVICES
+            </h2>
+            <p className="siliguri text-white text-left py-10 text-lg md:text-xl lg:text-2xl font-light tracking-wide">
               Our comprehensive solutions, from strategic consulting to
               innovative development, drive growth and efficiency. With
               cutting-edge technologies and a customer-centric approach, we

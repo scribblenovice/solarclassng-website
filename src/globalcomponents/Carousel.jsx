@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
-import { Link } from "react-router-dom";
-import { Fade } from "react-reveal";
+import { Fade, Zoom } from "react-reveal";
+import { Link } from "react-scroll";
 
 const slides = [
   {
@@ -14,7 +14,8 @@ const slides = [
     id: 1,
     class: "accessbg",
     header: "Access control and surveillance solutions",
-    parTxt: "EMPOWERING SECURITY THROUGH SEAMLESS ACCESS AND VIGILANT SURVEILLANCE SOLUTIONS",
+    parTxt:
+      "EMPOWERING SECURITY THROUGH SEAMLESS ACCESS AND VIGILANT SURVEILLANCE SOLUTIONS",
   },
   {
     id: 2,
@@ -27,7 +28,8 @@ const slides = [
     id: 3,
     class: "techbg",
     header: "Technology training and consultancy",
-    parTxt: "  DRIVING BUSINESS THROUGH STRATEGIC TECHNOLOGY INSIGHTS AND INNOVATIVE SOLUTIONS",
+    parTxt:
+      "  DRIVING BUSINESS THROUGH STRATEGIC TECHNOLOGY INSIGHTS AND INNOVATIVE SOLUTIONS",
   },
 ];
 
@@ -62,7 +64,10 @@ const Carousel = () => {
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
           {slides.map((slide) => (
-            <div key={slide.id} className="flex items-center relative carousel-slide">
+            <div
+              key={slide.id}
+              className="flex items-center relative carousel-slide"
+            >
               <div
                 className={`${
                   currentSlide === slide.id ? "move" : ""
@@ -86,6 +91,20 @@ const Carousel = () => {
             </div>
           ))}
         </div>
+        <Zoom>
+          <div>
+            <Link
+              to={`quote`}
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              className="bg-solar-blue text-center absolute text-lg text-white bottom-24 lg:bottom-28 left-1/2  -translate-x-1/2 px-4 py-3 lg:px-5 rounded-md cursor-pointer font-bold hover:scale-105 transition-all ease-linear duration-300"
+            >
+              GET A QUOTE
+            </Link>
+          </div>
+        </Zoom>
       </div>
       <button
         onClick={prevSlide}
@@ -99,20 +118,22 @@ const Carousel = () => {
       >
         <ChevronRightIcon className="h-6 w-6" />
       </button>
-      <div className="carousel-indicators bottom-5 lg:bottom-4">
-        {slides.map((slide, index) => (
-          <button
-            key={slide.id}
-            onClick={() => goToSlide(index)}
-            className={`carousel-indicator mx-5 w-12 h-12 md:w-14 md:h-14 bg-blend-multiply ${
-              slide.class
-            } ${index === currentSlide ? "active" : "bg-gray-500"}`}
-          />
-        ))}
+
+      <div className="carousel-indicators bottom-5 lg:bottom-4 left-1/2">
+        <Fade bottom>
+          {slides.map((slide, index) => (
+            <button
+              key={slide.id}
+              onClick={() => goToSlide(index)}
+              className={`carousel-indicator mx-5 w-12 h-12 md:w-14 md:h-14 bg-blend-multiply ${
+                slide.class
+              } ${index === currentSlide ? "active" : "bg-gray-500"}`}
+            />
+          ))}
+        </Fade>
       </div>
     </div>
   );
 };
 
 export default Carousel;
-

@@ -1,15 +1,20 @@
-const GlobalTextArea = ({
-  placeholderTxt,
-  row,
-  style,
-  className,
-  inputName,
-  handleChange,
-  handleDrag,
-  inputStyle,
-  errorTxt,
-  ...rest
-}) => {
+import { forwardRef } from "react";
+
+const GlobalTextArea = forwardRef((props, ref) => {
+  const {
+    placeholderTxt,
+    row,
+    style,
+    className,
+    inputName,
+    handleChange,
+    handleDrag,
+    inputStyle,
+    errorTxt,
+    errorClass,
+    ...rest
+  } = props;
+
   return (
     <div>
       <textarea
@@ -20,9 +25,10 @@ const GlobalTextArea = ({
         className={className}
         onDragStart={handleDrag}
         onChange={handleChange}
+        {...rest}
       ></textarea>
-      {errorTxt && <p className="text-xs text-red-100">{errorTxt}</p>}
+      {errorTxt && <p className={`text-xs ${errorClass || "text-red-100"}`}>{errorTxt}</p>}
     </div>
   );
-};
+});
 export default GlobalTextArea;

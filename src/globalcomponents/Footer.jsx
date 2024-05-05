@@ -1,75 +1,119 @@
+import { Link } from "react-router-dom";
+import src from "../assets/logo.png";
+import { navFooter, servicesFooter } from "../resources";
+
 const Footer = () => {
   return (
     <>
-      <div class="bg-black">
-        <div class=" max-w-screen-lg py-10 px-4 sm:px-6 text-gray-400 sm:flex justify-between mx-auto">
-          <div class="p-5 sm:w-2/12 border-r">
-            <div class="text-sm uppercase solarblue font-bold anta">Menu</div>
-            <ul className="siliguri">
-              <li class="my-2">
-                <a
-                  class="hover:text-blue-400 transition-all ease-linear duration-200"
-                  href="#"
-                >
-                  Home
-                </a>
-              </li>
-              <li class="my-2">
-                <a
-                  class="hover:text-blue-400 transition-all ease-linear duration-200"
-                  href="#"
-                >
-                  About Us
-                </a>
-              </li>
-              <li class="my-2">
-                <a
-                  class="hover:text-blue-400 transition-all ease-linear duration-200"
-                  href="#"
-                >
-                  Services
-                </a>
-              </li>
-              <li class="my-2">
-                <a
-                  class="hover:text-blue-400 transition-all ease-linear duration-200"
-                  href="#"
-                >
-                 Get a Quote
-                </a>
-              </li>
-            </ul>
+      <div class="bg-gray-900 w-screen">
+        <div className="w-[90%] py-20 mx-auto">
+          <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-10">
+            <div>
+              <Link to={`/`}>
+                <img src={src} alt="" className="h-20" loading="lazy" />
+              </Link>
+              <p className="siliguri font-normal text-lg text-gray-400 tracking-wide leading-7 my-5">
+                To be a leading technology company underpinned by sustainable
+                development best practices within Nigeria and beyond. To deliver
+                world class services to our clients.
+              </p>
+            </div>
+            <div className="pl-0 lg:pl-10">
+              <h2 className="text-white anta text-2xl mb-5">Our Services</h2>
+              <div className="siliguri flex flex-col gap-y-5 w-fit">
+                {servicesFooter.map((el) => {
+                  return (
+                    <Link
+                      key={el.id}
+                      to={el.to}
+                      className="text-gray-400 flex items-center text-xl w-fit hover:text-solar-blue transition-all ease-linear duration-150"
+                    >
+                      <i class="ri-arrow-right-s-fill"></i>
+                      {el.headerTxt}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="pl-0 lg:pl-10">
+              <h2 className="text-white anta text-2xl mb-5">Useful Links</h2>
+              <div className="siliguri flex flex-col gap-y-5 w-fit">
+                {navFooter.map((el) => {
+                  return (
+                    <Link
+                      key={el.id}
+                      to={el.to}
+                      className="text-gray-400 flex items-center text-xl w-fit hover:text-solar-blue transition-all ease-linear duration-150"
+                    >
+                      <i class="ri-arrow-right-s-fill"></i>
+                      {el.headerTxt}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+            <div className="pl-0 lg:pl-10">
+              <h2 className="text-white anta text-2xl mb-5">Location</h2>
+              <div className="flex mb-5">
+                <i className="ri-map-pin-line text-2xl text-solar-green rounded-full mr-3"></i>
+                <div className="">
+                  <h3 className="text-white siliguri text-base">Nigeria Address</h3>
+                  <p className="text-gray-400 w-fit siliguri">
+                    #2,Close,off Monday Akunna Street, Greenfield Estate, off
+                    Ago Palace Way, Okota, Isolo LCDA, Lagos, Nigeria.
+                  </p>
+                </div>
+              </div>
+              <div className="flex">
+                <i className="ri-map-pin-line text-2xl text-solar-green rounded-full mr-3"></i>
+                <div>
+                  <h3 className="text-white siliguri text-base">Canada Address</h3>
+                  <p className="text-gray-400 w-fit siliguri">
+                    15 Discovery Woods Villas, SW. Calgary, Alberta. T3H 5A6,
+                    Canada
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="p-5 sm:w-7/12 border-r text-center">
-            <h3 class="font-bold text-xl solarblue mb-4 anta">About</h3>
-            <p class="text-sm mb-10 siliguri text-gray-400">
-              Thank you for your time! It will be a worthwhile experience
-              working with SolarClass Ltd as your preferred solutions provider
-            </p>
+          <div className="mt-10 mx-auto grid grid-cols-1 md:grid-cols-2">
+            <div className="bg-solar-blue flex justify-center items-center gap-y-5 py-8">
+              <div className="flex w-80 items-center">
+                <div className="mr-5">
+                  <i class="ri-mail-line text-solar-blue rounded-full bg-white p-3 text-3xl"></i>
+                </div>
+                <div>
+                  <a
+                    href="mailto:contact@solarclassng.com"
+                    className="text-white text-xl"
+                  >
+                    contact@solarclassng.com
+                  </a>
+                  <p className="text-gray-400">Reach out to us</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white text-solar-blue flex justify-center items-center gap-y-5 py-8">
+              <div className="flex items-center w-80">
+                <div className="mr-5">
+                  <i class="ri-phone-fill text-white rounded-full bg-solar-blue p-3 text-3xl"></i>
+                </div>
+                <div>
+                  <a
+                    href="tel:+234 (802) 328 6942"
+                    className="text-solar-blue text-xl"
+                  >
+                    +234 (802) 328 6942
+                  </a>
+                  <p className="text-gray-600">Give us a call</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="p-5 sm:w-3/12">
-            <div class="text-sm uppercase solarblue font-bold anta">Contact Us</div>
-            <ul className="siliguri">
-              <li class="my-2">Lagos, Nigeria</li>
-              <li class="my-2">
-                <a
-                  class="hover:text-blue-400 transition-all ease-linear duration-200"
-                  href="mailto:contact@solarclassng.com"
-                >
-                  <i class="ri-mail-line mr-1"></i>
-                  contact@solarclassng.com
-                </a>
-              </li>
-              <li class="my-2">
-                <i class="ri-phone-line mr-1"></i>
-                +234(0)8023286942 <br /><i class="ri-phone-line mr-2"></i>{" "}
-                +1 403 919 3009
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="flex py-5 m-auto text-gray-500 text-sm flex-col items-center border-t-2 border-white max-w-screen-xl">
-          <div class="my-5 siliguri">© Solarclas Ltd 2024. All Rights Reserved.</div>
+          <p className="text-gray-400 text-center mt-5 text-lg">
+            {" "}
+            &copy; SOLAR CLASS LTD 2024. All rights reserved.
+          </p>
         </div>
       </div>
     </>

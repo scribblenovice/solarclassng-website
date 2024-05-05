@@ -1,23 +1,27 @@
 :root {
-  --solar-green: #4CAF50;
-  --solar-blue: #005D9A;
+  --solar-green: #4caf50;
+  --solar-blue: #005d9a;
 }
 
-.solargreen-bg{
-background-color: var(--solar-green);
+.solargreen-bg {
+  background-color: var(--solar-green);
 }
 
-.solarblue-bg{
-  background: rgb(0,93,154);
-background: linear-gradient(180deg, rgba(0, 92, 154, 0.829) 33%, rgba(76, 175, 79, 0.849) 74%);
-/* background-color: var(--solar-blue); */
+.solarblue-bg {
+  background: rgb(0, 93, 154);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 92, 154, 0.829) 33%,
+    rgba(76, 175, 79, 0.849) 74%
+  );
+  /* background-color: var(--solar-blue); */
 }
-.solarblue{
-    color: var(--solar-blue);
+.solarblue {
+  color: var(--solar-blue);
 }
 
-.solargreen{
-    color: var(--solar-green);
+.solargreen {
+  color: var(--solar-green);
 }
 body {
   overflow-x: hidden;
@@ -49,25 +53,25 @@ body {
   cursor: pointer;
 }
 .solarbg {
-  background-image: url(./assets/solar-install.jpg);
+  background-image: url(./assets/carousel/solar-install.webp);
   background-size: cover;
   background-position: center;
   background-blend-mode: multiply;
 }
 .accessbg {
-  background-image: url(./assets/carousel/accessbg.jpg);
+  background-image: url(./assets/carousel/accessbg.webp);
   background-size: cover;
   background-position: center;
   background-blend-mode: multiply;
 }
 .ictbg {
-  background-image: url(./assets/carousel/ictbg.jpg);
+  background-image: url(./assets/carousel/ictbg.webp);
   background-size: cover;
   background-position: center;
   background-blend-mode: multiply;
 }
 .techbg {
-  background-image: url(./assets/carousel/techbg.jpg);
+  background-image: url(./assets/carousel/techbg.webp);
   background-size: cover;
   background-position: center;
   background-blend-mode: multiply;
@@ -92,7 +96,6 @@ body {
 .hamburger.active .bar:nth-child(3) {
   transform: translateY(-13px) rotate(-45deg);
 }
-
 
 @keyframes open {
   0% {
@@ -221,7 +224,7 @@ h1,
 }
 
 .visionbg {
-  background: rgb(255, 255, 255);
+  background: rgb(238, 238, 238);
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 1) 40%,
@@ -230,7 +233,7 @@ h1,
   /* background: url(../src/assets/logo.png); */
 }
 .aboutbg {
-  background: url(../src/assets/solar-install.jpg);
+  background: url(../src/assets/carousel/solar-install.webp);
 }
 .aboutimg {
   box-shadow: -10px 10px 0px var(--solar-green);
@@ -289,11 +292,35 @@ h1,
 .shadow {
   box-shadow: 10px 10px 5px black;
 }
-.servicebg{
- background: rgb(255, 255, 255);
+.servicebg {
+  background: rgb(255, 255, 255);
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 1) 60%,
+    rgba(238, 238, 238, 1) 60%,
     rgba(0, 92, 154, 0.205) 80%
   );
+}
+.boxblur {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.514);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.514);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.514);
+}
+.boxblur:hover {
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.733);
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.733);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.733);
+}
+.fade {
+  animation: fade 0.5s;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.contact-page {
+  background-image: url(./assets/services/contactpage.webp);
 }

@@ -11,7 +11,7 @@ export function GlobalText({
   placeTxt,
   isRequired,
   className,
-  ...rest
+  errorClass
 }) {
   return (
     <div className={`w-full`}>
@@ -27,7 +27,7 @@ export function GlobalText({
         placeholder={placeTxt}
         required={isRequired}
       />
-      {errorTxt && <p className="max-h-2 text-xs text-red-100">{errorTxt}</p>}
+      {errorTxt && <p className={`max-h-2 text-xs ${errorClass || "text-red-100"}`}>{errorTxt}</p>}
     </div>
   );
 }

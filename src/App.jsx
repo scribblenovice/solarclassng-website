@@ -1,18 +1,19 @@
 import "./App.css";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 const HomePage = lazy(() => import("./pages/Homepage"));
 
 const Services = lazy(() => import("./pages/Services"));
 const Solar = lazy(() => import("./pages/solar-installation/Solar"));
-const AboutUs = lazy(() => import("./pages/AboutUs"));
+const AboutPage = lazy(() => import("./pages/about/AboutPage"));
 const Access = lazy(() => import("./pages/access-control/Access"));
+const Contact = lazy(() => import("./pages/contact/Contact"));
 import Loader from "./globalcomponents/Loader";
-import AboutPage from "./pages/about/AboutPage";
-import Contact from "./pages/contact/Contact";
 import OurServices from "./pages/Services/OurServices";
+import Error404Page from "./pages/Error404Page";
 
 function App() {
+
   return (
     <Routes>
       <Route
@@ -44,9 +45,7 @@ function App() {
         <Route
           path="ict-solutions"
           element={
-            <Suspense fallback={<Loader />}>
-              {/* <Services /> */}
-            </Suspense>
+            <Suspense fallback={<Loader />}>{/* <Services /> */}</Suspense>
           }
         />
         <Route
@@ -66,8 +65,23 @@ function App() {
           }
         />
       </Route>
-      <Route path="about-us" element={<AboutPage/>}/>
-      <Route path="contact-us" element={<Contact/>}/>
+      <Route
+        path="about-us"
+        element={
+          <Suspense fallback={<Loader />}>
+            <AboutPage />
+          </Suspense>
+        }
+      />
+      <Route
+        path="contact-us"
+        element={
+          <Suspense fallback={<Loader />}>
+            <Contact />
+          </Suspense>
+        }
+      />
+      <Route path="*" element={<Error404Page />} />
     </Routes>
   );
 }
