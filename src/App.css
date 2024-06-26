@@ -241,27 +241,11 @@ h1,
 .about {
   color: white;
   background: var(--solar-blue);
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
-.about.inview,
-.about:hover {
-  background: black;
-  color: white;
-  box-shadow: 1px 1px 17px black;
-}
+
 .mission {
   color: white;
   background: var(--solar-blue);
-  animation: loadRight 0.7s;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-.mission.inview,
-.mission:hover {
-  background: black;
-  color: white;
-  box-shadow: 1px 1px 17px black;
 }
 
 .shift {
@@ -293,10 +277,10 @@ h1,
   box-shadow: 10px 10px 5px black;
 }
 .servicebg {
-  background: rgb(255, 255, 255);
+  background: rgb(156, 156, 156);
   background: linear-gradient(
     180deg,
-    rgba(238, 238, 238, 1) 60%,
+    rgb(235, 235, 235) 60%,
     rgba(0, 92, 154, 0.205) 80%
   );
 }

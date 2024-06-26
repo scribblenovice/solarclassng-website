@@ -22,7 +22,7 @@ const Contact = () => {
           <span className="mr-2">/</span>Contact Us
         </div>
       </div>
-      <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 py-40 gap-5">
+      <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 py-20 md:py-40 gap-y-8 gap-x-5">
         <div className="min-h-[15rem] py-5 px-5 md:col-span-2 xl:col-span-1 rounded-lg boxblur transition-all ease-linear duration-200">
           <h2 className="text-center text-solar-blue text-xl font-semibold anta my-2">
             ADDRESS
@@ -48,11 +48,11 @@ const Contact = () => {
             <div className="w-full md:w-fit grid place-items-center my-3">
               <i className="ri-mail-open-line text-6xl md:text-6xl lg:text-7xl text-solar-green"></i>
             </div>
-            <div className="px-3 xl:px-1 h-[90px]">
+            <div className="px-3 xl:px-1 h-[90px] max-w-full">
               <h2 className="text-center md:text-left text-solar-blue text-xl font-semibold anta ">
                 EMAIL ADDRESS
               </h2>
-              <span className="siliguri text-gray-700 text-center text-xl">
+              <span className="siliguri text-gray-700 text-center text-xl pt-1 inline-block">
                 contact@solarclassng.com
               </span>
             </div>

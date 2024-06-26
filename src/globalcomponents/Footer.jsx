@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <>
       <div class="bg-gray-900 w-screen">
-        <div className="w-[90%] py-20 mx-auto">
+        <div className="w-[90%] pt-10 pb-5 mx-auto">
           <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-10">
             <div>
               <Link to={`/`}>
@@ -15,7 +15,7 @@ const Footer = () => {
               <p className="siliguri font-normal text-lg text-gray-400 tracking-wide leading-7 my-5">
                 To be a leading technology company underpinned by sustainable
                 development best practices within Nigeria and beyond. To deliver
-                world class services to our clients.
+                world class services to our clients5
               </p>
             </div>
             <div className="pl-0 lg:pl-10">
@@ -77,7 +77,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="mt-10 mx-auto grid grid-cols-1 md:grid-cols-2">
-            <div className="bg-solar-blue flex justify-center items-center gap-y-5 py-8">
+            <div className="bg-solar-blue flex justify-center items-center gap-y-5 py-4">
               <div className="flex w-80 items-center">
                 <div className="mr-5">
                   <i class="ri-mail-line text-solar-blue rounded-full bg-white p-3 text-3xl"></i>
@@ -93,7 +93,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-white text-solar-blue flex justify-center items-center gap-y-5 py-8">
+            <div className="bg-white text-solar-blue flex justify-center items-center gap-y-5 py-4">
               <div className="flex items-center w-80">
                 <div className="mr-5">
                   <i class="ri-phone-fill text-white rounded-full bg-solar-blue p-3 text-3xl"></i>
@@ -105,12 +105,12 @@ const Footer = () => {
                   >
                     +234 (802) 328 6942
                   </a>
-                  <p className="text-gray-600">Give us a call</p>
+                  <p className="text-solar-blue">Give us a call</p>
                 </div>
               </div>
             </div>
           </div>
-          <p className="text-gray-400 text-center mt-5 text-lg">
+          <p className="text-gray-400 text-center mt-5 text-base  md:text-lg">
             {" "}
             &copy; SOLAR CLASS LTD 2024. All rights reserved.
           </p>

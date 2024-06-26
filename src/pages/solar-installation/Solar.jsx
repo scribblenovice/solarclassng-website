@@ -6,6 +6,7 @@ import { useState } from "react";
 import Quote from "../Quote";
 import Footer from "../../globalcomponents/Footer";
 import { Fade } from "react-reveal";
+import WhatsappBtn from "../../globalcomponents/WhatsappBtn";
 
 const Solar = () => {
   const [active, setActive] = useState(false);
@@ -39,7 +40,7 @@ const Solar = () => {
             <span className="mr-2">/</span>Solar energy solutions
           </div>
         </div>
-        <div className="bg-gray-50">
+        <div className="">
           <div className="w-[90%] mx-auto py-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
               <div className="w-full mb-10 lg:mb-0 ">
@@ -90,6 +91,7 @@ const Solar = () => {
         <Quote />
       </Fade>
       <Footer />
+      <WhatsappBtn/>
     </>
   );
 };

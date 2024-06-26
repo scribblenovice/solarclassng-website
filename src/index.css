@@ -4,7 +4,7 @@
 
 
 .siliguri {
-  font-family: "Hind Siliguri", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-style: normal;
 }
 .solar-service{
@@ -29,4 +29,10 @@
   100% {
     transform: translateX(5px);
   }
+}
+.service-bg{
+  background-image: url(./assets/services/services.webp);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
 }

@@ -27,7 +27,7 @@ export function GlobalText({
         placeholder={placeTxt}
         required={isRequired}
       />
-      {errorTxt && <p className={`max-h-2 text-xs ${errorClass || "text-red-100"}`}>{errorTxt}</p>}
+      {errorTxt && <p className={`max-h-2 text-xs ${errorClass || "text-red-500"}`}>{errorTxt}</p>}
     </div>
   );
 }

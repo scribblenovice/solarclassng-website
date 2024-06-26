@@ -75,23 +75,20 @@ const Carousel = () => {
                   slide.class
                 }`}
               ></div>
-              <Fade bottom>
-                <div className="mx-auto text-white z-10 relative text-center w-[90%] flex flex-col justify-evenly h-[60%]">
+              <Fade>
+                <div className="mx-auto text-white z-10 relative text-center w-[90%] flex flex-col justify-evenly">
                   <p className="anta text-lg text-center md:text-xl">
                     {slide.header}
                   </p>
-                  <h1 className="font-black text-2xl md:text-5xl leading-10 lg:leading-[70px] mb-5 lg:mb-0">
+                  <h1 className="mt-5 md:mt-7 font-black text-2xl md:text-5xl leading-10 lg:leading-[70px] mb-5 lg:mb-0">
                     {slide.parTxt}
                   </h1>
-                  {/* <Link class="anta transition-all ease-linear duration-300 hover:bg-white hover:text-black mx-auto my-5 w-40 py-5 px-2 block bg-black rounded-lg p-4 text-white">
-                    LEARN MORE
-                  </Link> */}
                 </div>
               </Fade>
             </div>
           ))}
         </div>
-        <Zoom>
+        <Fade>
           <div>
             <Link
               to={`quote`}
@@ -99,12 +96,12 @@ const Carousel = () => {
               smooth={true}
               offset={-100}
               duration={500}
-              className="bg-solar-blue text-center absolute text-lg text-white bottom-24 lg:bottom-28 left-1/2  -translate-x-1/2 px-4 py-3 lg:px-5 rounded-md cursor-pointer font-bold hover:scale-105 transition-all ease-linear duration-300"
+              className="bg-solar-blue text-center absolute text-lg text-white bottom-24 lg:bottom-28 left-1/2 font-semibold -translate-x-1/2 px-4 py-3 lg:px-5 rounded-md cursor-pointer"
             >
               GET A QUOTE
             </Link>
           </div>
-        </Zoom>
+        </Fade>
       </div>
       <button
         onClick={prevSlide}
@@ -120,12 +117,12 @@ const Carousel = () => {
       </button>
 
       <div className="carousel-indicators bottom-5 lg:bottom-4 left-1/2">
-        <Fade bottom>
+        <Fade>
           {slides.map((slide, index) => (
             <button
               key={slide.id}
               onClick={() => goToSlide(index)}
-              className={`carousel-indicator mx-5 w-12 h-12 md:w-14 md:h-14 bg-blend-multiply ${
+              className={`carousel-indicator mx-5 w-6 h-6 md:w-10 md:h-10 bg-blend-multiply ${
                 slide.class
               } ${index === currentSlide ? "active" : "bg-gray-500"}`}
             />

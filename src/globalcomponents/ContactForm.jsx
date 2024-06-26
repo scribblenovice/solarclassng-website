@@ -36,6 +36,7 @@ const ContactForm = () => {
     email: formData.email.trim(),
     subject: formData.subject.trim(),
     message: formData.message,
+    phoneNumber: formData.phoneNumber,
   };
   const [formErrors, setFormErrors] = useState({});
   const validateForm = () => {

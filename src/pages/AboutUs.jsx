@@ -14,7 +14,7 @@ const AboutUs = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <div className="w-full mb-10 lg:mb-0 ">
               <div className="">
-                <h2 className="text-center lg:text-left text-white text-3xl font-black md:text-5xl anta">
+                <h2 className="text-left lg:text-left text-white text-3xl font-black md:text-5xl anta">
                   ABOUT US
                 </h2>
                 <p className="siliguri my-5 text-lg leading-7 text-gray-300 font-light tracking-wide">

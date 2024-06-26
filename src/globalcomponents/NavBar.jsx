@@ -23,7 +23,7 @@ const NavBar = () => {
             ? "bg-white shadow-lg opacity-100"
             : "bg-transparent opacity-0"
         } transition-all ease-linear
-       duration-200 w-screen fixed top-0 z-50  py-3`}
+       duration-200 w-screen fixed top-0 z-50`}
       >
         <div className="h-20 flex navbar justify-between mx-auto w-[90%] sm:w-[80%]">
           <div className="w-36 static h-20 flex items-center">
@@ -50,7 +50,7 @@ const NavBar = () => {
             >
               HOME
             </Link>
-            <Link
+            {/* <Link
               to={`/about-us`}
               className={`border-b-2 lg:border-b-0 py-5 lg:my-10 nav-link text-center relative text-base lg:text-xl w-full lg:w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center ${
                 scrollNumber > 0
@@ -59,7 +59,7 @@ const NavBar = () => {
               }  transition-all ease-linear duration-200`}
             >
               ABOUT
-            </Link>
+            </Link> */}
               <Link
                 to={`/services`}
                 className={`border-b-2 lg:border-b-0 py-5 lg:my-10 nav-link text-center relative text-base lg:text-xl w-full lg:w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center ${

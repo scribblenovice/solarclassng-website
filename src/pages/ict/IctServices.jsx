@@ -1,20 +1,20 @@
+import { Fade } from "react-reveal";
+import Footer from "../../globalcomponents/Footer";
+import WhatsappBtn from "../../globalcomponents/WhatsappBtn";
+import Quote from "../Quote";
 import { Link } from "react-router-dom";
 import NavBar from "../../globalcomponents/NavBar";
-import Footer from "../../globalcomponents/Footer";
-import { accessControl } from "../../resources";
-import src1 from "../../assets/services/cctv/camera.webp";
-import { Fade } from "react-reveal";
-import Quote from "../Quote";
-import WhatsappBtn from "../../globalcomponents/WhatsappBtn";
+import { accessControl, ictArray } from "../../resources";
+import src1 from "../../assets/services/ict/ictpic.webp";
 
-const Access = () => {
+const IctServices = () => {
   return (
     <>
       <section>
         <NavBar />
-        <div className="accessbg flex gap-y-5 flex-col justify-center items-center h-screen bg-no-repeat bg-cover bg-blend-multiply bg-gray-800 bg-center">
+        <div className="ictbg flex gap-y-5 flex-col justify-center items-center h-screen bg-no-repeat bg-cover bg-blend-multiply bg-gray-800 bg-center">
           <h1 className="text-white text-3xl md:text-5xl font-bold text-center">
-            ELECTRONIC SECURITY SURVEILLANCE AND ACCESS CONTROL SOLUTIONS
+            INFORMATION AND COMMUNCATION TECHNOLOGY SERVICES
           </h1>
           <div className="text-white">
             <Link
@@ -30,7 +30,7 @@ const Access = () => {
             >
               Services
             </Link>
-            <span className="mr-2">/</span>CCTV and access control
+            <span className="mr-2">/</span>ICT Services
           </div>
         </div>
         <div className="">
@@ -40,19 +40,16 @@ const Access = () => {
                 <div className="">
                   <Fade>
                     <p className="siliguri text-left text-lg leading-8 font-normal tracking-wide py-3">
-                      At SolarClass ltd, we provide access control and CCTV
-                      solutions to enhance security for various environments by
-                      managing entry, monitoring premises, and deterring
-                      threats. These technologies work together to ensure
-                      safety, privacy, and asset protection, forming a
-                      comprehensive security framework.
+                      At SolarClass ltd, we provide a wide variety of ICT
+                      services to satisfy the very needs and requirements of our
+                      customers
                     </p>
-                    <p className="siliguri text-lg leading-7 font-normal tracking-wide">
+                    {/* <p className="siliguri text-lg leading-7 font-normal tracking-wide">
                       We offer a wide variety of access control and CCTV
                       solutions such as:
-                    </p>
+                    </p> */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 py-3 siliguri">
-                      {accessControl.map((el) => {
+                      {ictArray.map((el) => {
                         return (
                           <div className="flex items-center ">
                             <div className="">
@@ -69,7 +66,7 @@ const Access = () => {
               <Fade>
                 <img
                   loading="lazy"
-                  src={src1}
+                    src={src1}
                   alt=""
                   className="w-full h-full rounded-md"
                 />
@@ -78,12 +75,12 @@ const Access = () => {
           </div>
         </div>
       </section>
-      <Fade>
-        <Quote />
-      </Fade>
+
+      <Quote />
+
       <Footer />
-      <WhatsappBtn/>
+      <WhatsappBtn />
     </>
   );
 };
-export default Access;
+export default IctServices;

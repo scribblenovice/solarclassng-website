@@ -139,13 +139,13 @@ const Quote = () => {
 
   return (
     <>
-      <div class="py-20 bg-gray-200">
-        <div class="grid md:grid-cols-2 items-center gap-16 p-4 md:p-8 mx-auto w-[90%] bg-solar-blue shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md text-[#333] font-[sans-serif]">
+      <div class="py-20 bg-gray-50">
+        <div class="grid md:grid-cols-2 items-center gap-16 mx-auto w-[90%] rounded-md text-[#333] siliguri">
           <div>
-            <h1 class="text-3xl font-extrabold text-white">
+            <h1 class="text-3xl font-extrabold text-gray-900">
               GET A QUOTE FROM US
             </h1>
-            <p class="siliguri mt-3 text-base leading-7 text-gray-300">
+            <p class="siliguri mt-3 text-lg leading-8 font-normal tracking-wide text-gray-900">
               Discover our range of tailored solutions, including solar, access
               control, ICT, and expert tech consulting. Our specialists
               collaborate closely with you to understand your needs, offering
@@ -154,16 +154,16 @@ const Quote = () => {
               leverage technology for success. Request a quote today and see the
               impact our solutions can have on your business!
             </p>
-            <div class="mt-12 siliguri">
-              <h2 class="text-lg text-white font-extrabold">Email</h2>
+            <div class="mt-12 siliguri text-gray-900">
+              <h2 class="text-lg font-medium">Email</h2>
               <ul class="mt-3">
                 <li class="flex items-center">
-                  <div class="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+                  <div class="bg-solar-blue h-10 w-10 rounded-full flex items-center justify-center shrink-0">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20px"
                       height="20px"
-                      fill="#007bff"
+                      fill="#fff"
                       viewBox="0 0 479.058 479.058"
                     >
                       <path
@@ -175,10 +175,10 @@ const Quote = () => {
                   <a
                     target="blank"
                     href="mailto:contact@solarclassng.com"
-                    class="text-gray-300 ml-3"
+                    class=" ml-3"
                   >
                     <small class="block">Send us an email</small>
-                    <strong>contact@solarclassng.com</strong>
+                    <p className="font-medium">contact@solarclassng.com</p>
                   </a>
                 </li>
               </ul>
@@ -196,7 +196,7 @@ const Quote = () => {
               inputName={`name`}
               placeTxt={`Name`}
               inputVal={formData.name}
-              className={`w-full rounded-md py-2.5 px-4 border text-sm outline-[#007bff]`}
+              className={`w-full rounded-md py-2.5 px-4 border-[1px] text-sm border-gray-700`}
               handleChange={handleChange}
               errorTxt={formErrors.name}
             />
@@ -205,7 +205,7 @@ const Quote = () => {
               inputName={`email`}
               placeTxt={`Email`}
               inputVal={formData.email}
-              className={`w-full rounded-md py-2.5 px-4 border text-sm outline-[#007bff]`}
+              className={`w-full rounded-md py-2.5 px-4 border-[1px] text-sm border-gray-700`}
               handleChange={handleChange}
               errorTxt={formErrors.email}
             />
@@ -214,7 +214,7 @@ const Quote = () => {
               inputName={`subject`}
               placeTxt={`Subject`}
               inputVal={formData.subject}
-              className={`w-full rounded-md py-2.5 px-4 border text-sm outline-[#007bff]`}
+              className={`w-full rounded-md py-2.5 px-4 border-[1px] text-sm border-gray-700`}
               handleChange={handleChange}
               errorTxt={formErrors.subject}
             />
@@ -224,7 +224,7 @@ const Quote = () => {
               placeholderTxt={`Message`}
               inputName={`message`}
               inputStyle={{ resize: "none" }}
-              className="w-full rounded-md px-4 border text-sm pt-2.5 outline-[#007bff]"
+              className="w-full rounded-md px-4 border-[1px] text-sm pt-2.5 border-gray-700"
               handleDrag={(e) => {
                 e.preventDefault();
               }}

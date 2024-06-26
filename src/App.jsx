@@ -2,15 +2,17 @@ import "./App.css";
 import { Suspense, lazy, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 const HomePage = lazy(() => import("./pages/Homepage"));
-
 const Services = lazy(() => import("./pages/Services"));
 const Solar = lazy(() => import("./pages/solar-installation/Solar"));
 const AboutPage = lazy(() => import("./pages/about/AboutPage"));
 const Access = lazy(() => import("./pages/access-control/Access"));
 const Contact = lazy(() => import("./pages/contact/Contact"));
 import Loader from "./globalcomponents/Loader";
-import OurServices from "./pages/Services/OurServices";
+
+const OurServices = lazy(() => import("./pages/Services/OurServices"));
 import Error404Page from "./pages/Error404Page";
+import IctServices from "./pages/ict/IctServices";
+import TechConsulting from "./pages/consulting/TechConsulting";
 
 function App() {
 
@@ -45,7 +47,7 @@ function App() {
         <Route
           path="ict-solutions"
           element={
-            <Suspense fallback={<Loader />}>{/* <Services /> */}</Suspense>
+            <Suspense fallback={<Loader />}><IctServices/></Suspense>
           }
         />
         <Route
@@ -60,7 +62,7 @@ function App() {
           path="tech-consulting"
           element={
             <Suspense fallback={<Loader />}>
-              <Services />
+              <TechConsulting />
             </Suspense>
           }
         />

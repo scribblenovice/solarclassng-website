@@ -27,7 +27,7 @@ const GlobalTextArea = forwardRef((props, ref) => {
         onChange={handleChange}
         {...rest}
       ></textarea>
-      {errorTxt && <p className={`text-xs ${errorClass || "text-red-100"}`}>{errorTxt}</p>}
+      {errorTxt && <p className={`text-xs ${errorClass || "text-red-500"}`}>{errorTxt}</p>}
     </div>
   );
 });

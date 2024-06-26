@@ -7,6 +7,7 @@ import Footer from "../globalcomponents/Footer";
 import Quote from "./Quote";
 import MailBtn from "../globalcomponents/MailBtn";
 import { Element } from "react-scroll";
+import WhatsappBtn from "../globalcomponents/WhatsappBtn";
 
 const HomePage = () => {
   return (
@@ -19,6 +20,7 @@ const HomePage = () => {
       <Element name="quote">
         <Quote />
       </Element>
+      <WhatsappBtn/>
       <Footer />
     </>
   );
