@@ -103,9 +103,12 @@ const ContactForm = () => {
       setOpen(false);
       // Submit the form data or perform other actions
       axios
-        .post("https://solarclassng-mail-service.onrender.com/receive-email", {
-          ...payload,
-        })
+        .post(
+          "https://www.solarclassng.com/qservers_mail.php",
+          {
+            ...payload,
+          }
+        )
         .then((res) => {
           console.log(res);
           if (res) {
@@ -159,6 +162,7 @@ const ContactForm = () => {
     <>
       <form
         onSubmit={handleSubmit}
+        action="https://www.solarclassng.com/qservers_mail.php"
         method="post"
         className="ml-auto space-y-4 py-20"
       >

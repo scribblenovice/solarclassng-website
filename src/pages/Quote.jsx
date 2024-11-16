@@ -70,7 +70,76 @@ const Quote = () => {
     });
     // console.log(formData);
   };
-  const handleSubmit = (e) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const isValid = validateForm();
+  //   if (!isValid) {
+  //     setShake(true);
+  //     setTimeout(() => {
+  //       setShake(false);
+  //     }, 300);
+  //   }
+  //   if (isValid) {
+  //     setShake(false);
+  //     setPending(true);
+  //     setOpen(false);
+  //     // Submit the form data or perform other actions
+  //     axios
+  //       .post(
+  //         "http://localhost:3001/receive-email",
+  //         {
+  //           ...payload,
+  //         }
+  //       )
+  //       .then((res) => {
+  //         console.log(res);
+  //         if (res) {
+  //           setPending(false);
+  //           setOpen(true);
+  //           setEmailError(false);
+  //         }
+  //         if (res.data === "sent") {
+  //           setPending(false);
+  //           setOpen(true);
+  //           setEmailError(false);
+  //           setFormData({
+  //             name: "",
+  //             email: "",
+  //             subject: "",
+  //             message: "",
+  //           });
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         // Handle error
+  //         if (error.response) {
+  //           setPending(false);
+  //           setOpen(true);
+  //           setEmailError(true);
+  //           // The request was made and the server responded with a status code
+  //           // that falls out of the range of 2xx
+  //           // console.log(
+  //           //   "Server responded with a non-2xx status code:",
+  //           //   error.response.status
+  //           // );
+  //           // console.log('Data:', error.response.data);
+  //         } else if (error.request) {
+  //           // The request was made but no response was received
+  //           setPending(false);
+  //           setOpen(true);
+  //           setEmailError(true);
+  //           // console.log("No response received");
+  //         } else {
+  //           setPending(false);
+  //           setOpen(true);
+  //           setEmailError(true);
+  //           // console.log("Error setting up the request:", error.message);
+  //         }
+  //         // console.log("Error config:", error.config);
+  //       });
+  //   }
+  // };
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const isValid = validateForm();
     if (!isValid) {
@@ -78,62 +147,45 @@ const Quote = () => {
       setTimeout(() => {
         setShake(false);
       }, 300);
+      return;
     }
-    if (isValid) {
-      setShake(false);
-      setPending(true);
-      setOpen(false);
-      // Submit the form data or perform other actions
-      axios
-        .post("https://solarclassng-mail-service.onrender.com/receive-email", {
-          ...payload,
-        })
-        .then((res) => {
-          console.log(res);
-          if (res) {
-            setPending(false);
-            setOpen(true);
-            setEmailError(false);
-          }
-          if (res.data === "sent") {
-            setPending(false);
-            setOpen(true);
-            setEmailError(false);
-            setFormData({
-              name: "",
-              email: "",
-              subject: "",
-              message: "",
-            });
-          }
-        })
-        .catch((error) => {
-          // Handle error
-          if (error.response) {
-            setPending(false);
-            setOpen(true);
-            setEmailError(true);
-            // The request was made and the server responded with a status code
-            // that falls out of the range of 2xx
-            // console.log(
-            //   "Server responded with a non-2xx status code:",
-            //   error.response.status
-            // );
-            // console.log('Data:', error.response.data);
-          } else if (error.request) {
-            // The request was made but no response was received
-            setPending(false);
-            setOpen(true);
-            setEmailError(true);
-            // console.log("No response received");
-          } else {
-            setPending(false);
-            setOpen(true);
-            setEmailError(true);
-            // console.log("Error setting up the request:", error.message);
-          }
-          // console.log("Error config:", error.config);
+
+    setShake(false);
+    setPending(true);
+    setOpen(false);
+
+    try {
+      const response = await axios.post(
+        "https://www.solarclassng.com/qservers_mail.php", // Replace with your PHP script's URL
+        payload,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.data.status === "success") {
+        setPending(false);
+        setOpen(true);
+        setEmailError(false);
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
         });
+      } else {
+        setPending(false);
+        setOpen(true);
+        setEmailError(true);
+        console.log("Error:", response.data.message);
+      }
+    } catch (error) {
+      setPending(false);
+      setOpen(true);
+      setEmailError(true);
+      console.log("Error:", error);
     }
   };
 
@@ -187,8 +239,8 @@ const Quote = () => {
 
           <form
             onSubmit={handleSubmit}
-            // action="https://fabform.io/f/xxxxx"
-            method="post"
+            action="https://www.solarclassng.com/qservers_mail.php"
+            method="POST"
             class="space-y-4"
           >
             <GlobalText
