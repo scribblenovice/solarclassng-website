@@ -104,7 +104,7 @@ const ContactForm = () => {
       // Submit the form data or perform other actions
       axios
         .post(
-          "https://www.solarclassng.com/qservers_mail.php",
+          "https://solarclassng-mail-service-rg38.onrender.com/receive-mail",
           {
             ...payload,
           }

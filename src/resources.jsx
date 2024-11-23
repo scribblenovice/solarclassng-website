@@ -130,16 +130,36 @@ export const navFooter = [
 
 export const accessControl = [
   { id: 0, title: "Perimeter Intrusion and detection system (PIDS)" },
-  { id: 1, title: "Indoor and outdoor closed-circuit television (CCTV) surveillance & monitoring" },
+  {
+    id: 1,
+    title:
+      "Indoor and outdoor closed-circuit television (CCTV) surveillance & monitoring",
+  },
   { id: 2, title: "Command and control room" },
   { id: 3, title: "Biometric and identification systems" },
   { id: 4, title: " Electronic (key, Card, barrier) access control systems" },
 ];
 
 export const ictArray = [
-  { id: 0, title: "Telecommunications services using various technologies (microwave radio, VSAT, Fiber Optics)" },
-  { id: 1, title: "IT infrastructure deployment and management / Structured office cabling" },
+  {
+    id: 0,
+    title:
+      "Telecommunications services using various technologies (microwave radio, VSAT, Fiber Optics)",
+  },
+  {
+    id: 1,
+    title:
+      "IT infrastructure deployment and management / Structured office cabling",
+  },
   { id: 2, title: "LAN/WAN deployment" },
-  { id: 3, title: "General IT equipment procurement, deployment and maintenance support" },
-  { id: 4, title: "Onsite and remote telecommunication and IT facility management services" },
+  {
+    id: 3,
+    title:
+      "General IT equipment procurement, deployment and maintenance support",
+  },
+  {
+    id: 4,
+    title:
+      "Onsite and remote telecommunication and IT facility management services",
+  },
 ];
