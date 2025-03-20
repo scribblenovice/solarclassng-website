@@ -1,12 +1,12 @@
 import express from "express";
-import nodemailer from "nodemailer"
+import nodemailer from "nodemailer";
 import bodyParser from "body-parser";
 import cors from "cors";
 
 const app = express();
 app.use(bodyParser.json());
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 
 const transporter = nodemailer.createTransport({
   host: "mail.solarclassng.com",
@@ -19,7 +19,7 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post("/receive-email", (req, res) => {
-    console.log(req.body);
+  console.log(req.body);
   const { name, email, subject, message } = req.body;
   const mailOptions = {
     from: email,
@@ -39,7 +39,6 @@ app.post("/receive-email", (req, res) => {
   });
 });
 
-
-app.listen(3001, () => {
+app.listen(3002, () => {
   console.log("Server running on port 3001");
 });
