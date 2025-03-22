@@ -15,12 +15,11 @@ import IctServices from "./pages/ict/IctServices";
 import TechConsulting from "./pages/consulting/TechConsulting";
 
 function App() {
-
   return (
     <Routes>
+      <Route path="/" />
       <Route
         index
-        path="/"
         element={
           <Suspense fallback={<Loader />}>
             <HomePage />
@@ -47,7 +46,9 @@ function App() {
         <Route
           path="ict-solutions"
           element={
-            <Suspense fallback={<Loader />}><IctServices/></Suspense>
+            <Suspense fallback={<Loader />}>
+              <IctServices />
+            </Suspense>
           }
         />
         <Route
