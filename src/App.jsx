@@ -18,7 +18,6 @@ function App() {
   return (
     <Routes>
       <Route path="/" />
-      
       <Route
         index
         element={
