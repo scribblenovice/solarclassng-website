@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import { getGlobals } from "common-es";
+import path from "path";
 
 const { __dirname, __filename } = getGlobals(import.meta.url);
 const app = express();
