@@ -1,6 +1,5 @@
 import { aboutInfo } from "../resources";
 import imgSrc from "../assets/about/solarclass2.webp";
-import { Fade, Zoom } from "react-reveal";
 
 const AboutUs = () => {
   return (

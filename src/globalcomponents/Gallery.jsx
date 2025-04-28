@@ -2,7 +2,6 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Fade } from "react-reveal";
 import { accessControl } from "../resources";
 
 export const Gallery = () => {

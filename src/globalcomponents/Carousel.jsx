@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
-import { Fade, Zoom } from "react-reveal";
+
 import { Link } from "react-scroll";
 
 const slides = [
@@ -75,7 +75,6 @@ const Carousel = () => {
                   slide.class
                 }`}
               ></div>
-              <Fade>
                 <div className="mx-auto text-white z-10 relative text-center w-[90%] flex flex-col justify-evenly">
                   <p className="anta text-lg text-center md:text-xl">
                     {slide.header}
@@ -84,11 +83,9 @@ const Carousel = () => {
                     {slide.parTxt}
                   </h1>
                 </div>
-              </Fade>
             </div>
           ))}
         </div>
-        <Fade>
           <div>
             <Link
               to={`quote`}
@@ -101,7 +98,6 @@ const Carousel = () => {
               GET A QUOTE
             </Link>
           </div>
-        </Fade>
       </div>
       <button
         onClick={prevSlide}
@@ -117,7 +113,6 @@ const Carousel = () => {
       </button>
 
       <div className="carousel-indicators bottom-5 lg:bottom-4 left-1/2">
-        <Fade>
           {slides.map((slide, index) => (
             <button
               key={slide.id}
@@ -127,7 +122,6 @@ const Carousel = () => {
               } ${index === currentSlide ? "active" : "bg-gray-500"}`}
             />
           ))}
-        </Fade>
       </div>
     </div>
   );

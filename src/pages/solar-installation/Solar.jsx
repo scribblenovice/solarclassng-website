@@ -5,7 +5,6 @@ import { solarSolutions } from "../../resources";
 import { useState } from "react";
 import Quote from "../Quote";
 import Footer from "../../globalcomponents/Footer";
-import { Fade } from "react-reveal";
 import WhatsappBtn from "../../globalcomponents/WhatsappBtn";
 
 const Solar = () => {
@@ -45,7 +44,6 @@ const Solar = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
               <div className="w-full mb-10 lg:mb-0 ">
                 <div className="">
-                  <Fade>
                     <p className="siliguri text-left text-lg leading-8 font-normal tracking-wide py-3">
                       SolarClass Ltd is a vendor-neutral solutions provider
                       offering industry-leading solar panels, inverters, and
@@ -72,17 +70,14 @@ const Solar = () => {
                         );
                       })}
                     </div>
-                  </Fade>
                 </div>
               </div>
-              <Fade>
                 <img
                   loading="lazy"
                   src={src1}
                   alt=""
                   className="w-full h-full rounded-md"
                 />
-              </Fade>
             </div>
           </div>
         </div>

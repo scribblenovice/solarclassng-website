@@ -142,7 +142,7 @@ const Quote = () => {
   return (
     <>
       <div class="py-20 bg-gray-50">
-        <div class="grid md:grid-cols-2 items-center gap-16 mx-auto w-[90%] rounded-md text-[#333] siliguri">
+        <div class="grid md:grid-cols-2 items-center gap-16 mx-auto w-[90%] rounded-sm text-[#333] siliguri">
           <div>
             <h1 class="text-3xl font-extrabold text-gray-900">
               GET A QUOTE FROM US
@@ -187,18 +187,13 @@ const Quote = () => {
             </div>
           </div>
 
-          <form
-            onSubmit={handleSubmit}
-            action="https://www.solarclassng.com/qservers_mail.php"
-            method="POST"
-            class="space-y-4"
-          >
+          <div class="space-y-4">
             <GlobalText
               inputType={`text`}
               inputName={`name`}
               placeTxt={`Name`}
               inputVal={formData.name}
-              className={`w-full rounded-md py-2.5 px-4 border-[1px] text-sm border-gray-700`}
+              className={`w-full rounded-sm py-2.5 px-4 border-[1px] text-sm border-gray-700`}
               handleChange={handleChange}
               errorTxt={formErrors.name}
             />
@@ -207,7 +202,7 @@ const Quote = () => {
               inputName={`email`}
               placeTxt={`Email`}
               inputVal={formData.email}
-              className={`w-full rounded-md py-2.5 px-4 border-[1px] text-sm border-gray-700`}
+              className={`w-full rounded-sm py-2.5 px-4 border-[1px] text-sm border-gray-700`}
               handleChange={handleChange}
               errorTxt={formErrors.email}
             />
@@ -216,7 +211,7 @@ const Quote = () => {
               inputName={`subject`}
               placeTxt={`Subject`}
               inputVal={formData.subject}
-              className={`w-full rounded-md py-2.5 px-4 border-[1px] text-sm border-gray-700`}
+              className={`w-full rounded-sm py-2.5 px-4 border-[1px] text-sm border-gray-700`}
               handleChange={handleChange}
               errorTxt={formErrors.subject}
             />
@@ -226,7 +221,7 @@ const Quote = () => {
               placeholderTxt={`Message`}
               inputName={`message`}
               inputStyle={{ resize: "none" }}
-              className="w-full rounded-md px-4 border-[1px] text-sm pt-2.5 border-gray-700"
+              className="w-full rounded-sm px-4 border-[1px] text-sm pt-2.5 border-gray-700"
               handleDrag={(e) => {
                 e.preventDefault();
               }}
@@ -236,13 +231,13 @@ const Quote = () => {
             <button
               type="submit"
               onClick={handleSubmit}
-              class={`text-white bg-[#007bff] hover:bg-blue-600 font-semibold rounded-md text-lg px-4 py-2.5 w-full ${
+              class={`text-white bg-[#007bff] hover:bg-blue-600 font-semibold rounded-sm text-lg px-4 py-2.5 w-full ${
                 shake ? "shake" : ""
               }`}
             >
               SEND
             </button>
-          </form>
+          </div>
         </div>
       </div>
       {pending && <EmailLoading />}

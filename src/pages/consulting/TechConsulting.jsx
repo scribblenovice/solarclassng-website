@@ -1,4 +1,3 @@
-import { Fade } from "react-reveal";
 import Footer from "../../globalcomponents/Footer";
 import WhatsappBtn from "../../globalcomponents/WhatsappBtn";
 import Quote from "../Quote";
@@ -38,7 +37,6 @@ const TechConsulting = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
               <div className="w-full mb-10 lg:mb-0 flex items-center">
                 <div className="">
-                  <Fade>
                     <p className="siliguri text-left text-lg leading-8 font-normal tracking-wide py-3">
                       At SolarClass ltd, we engage in continual improvement of
                       the knowledge of its own personnel and her clients in
@@ -48,17 +46,14 @@ const TechConsulting = () => {
                       international training bodies in the specific technology
                       area.
                     </p>
-                  </Fade>
                 </div>
               </div>
-              <Fade>
                 <img
                   loading="lazy"
                   src={src1}
                   alt=""
                   className="w-full h-full rounded-md"
                 />
-              </Fade>
             </div>
           </div>
         </div>

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import InViewPortDetector from "../globalcomponents/ViewPortdetector";
-import { Fade } from "react-reveal";
 import { servicesArray } from "../resources";
 
 const Services = () => {

@@ -1,4 +1,4 @@
-import { Fade } from "react-reveal";
+
 
 const Vision = () => {
   return (
@@ -7,7 +7,6 @@ const Vision = () => {
         id="about"
         class="servicebg h-fit mx-auto w-4.5/5 py-20 flex items-center"
       >
-        <Fade>
           <div className="w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class=" bg-white py-10 px-4 text-neutral-200 rounded-2xl mb-8 md:mb-0 shadow-xl">
               <div className="mx-4 border-none border-green-500 w-fit">
@@ -34,7 +33,6 @@ const Vision = () => {
               </p>
             </div>
           </div>
-        </Fade>
       </section>
     </>
   );

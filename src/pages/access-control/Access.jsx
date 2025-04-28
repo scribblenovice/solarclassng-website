@@ -3,7 +3,7 @@ import NavBar from "../../globalcomponents/NavBar";
 import Footer from "../../globalcomponents/Footer";
 import { accessControl } from "../../resources";
 import src1 from "../../assets/services/cctv/camera.webp";
-import { Fade } from "react-reveal";
+
 import Quote from "../Quote";
 import WhatsappBtn from "../../globalcomponents/WhatsappBtn";
 

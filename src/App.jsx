@@ -17,15 +17,16 @@ import TechConsulting from "./pages/consulting/TechConsulting";
 function App() {
   return (
     <Routes>
-      <Route path="/" />
-      <Route
-        index
-        element={
-          <Suspense fallback={<Loader />}>
-            <HomePage />
-          </Suspense>
-        }
-      />
+      <Route path="/">
+        <Route
+          index
+          element={
+            <Suspense fallback={<Loader />}>
+              <HomePage />
+            </Suspense>
+          }
+        />
+      </Route>
       <Route path="services">
         <Route
           index

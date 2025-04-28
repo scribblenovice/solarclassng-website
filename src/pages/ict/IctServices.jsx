@@ -1,4 +1,4 @@
-import { Fade } from "react-reveal";
+
 import Footer from "../../globalcomponents/Footer";
 import WhatsappBtn from "../../globalcomponents/WhatsappBtn";
 import Quote from "../Quote";
@@ -38,7 +38,6 @@ const IctServices = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
               <div className="w-full mb-10 lg:mb-0 ">
                 <div className="">
-                  <Fade>
                     <p className="siliguri text-left text-lg leading-8 font-normal tracking-wide py-3">
                       At SolarClass ltd, we provide a wide variety of ICT
                       services to satisfy the very needs and requirements of our
@@ -60,17 +59,14 @@ const IctServices = () => {
                         );
                       })}
                     </div>
-                  </Fade>
                 </div>
               </div>
-              <Fade>
                 <img
                   loading="lazy"
                     src={src1}
                   alt=""
                   className="w-full h-full rounded-md"
                 />
-              </Fade>
             </div>
           </div>
         </div>

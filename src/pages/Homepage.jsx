@@ -15,14 +15,14 @@ const HomePage = () => {
     <>
       <NavBar />
       <CarouselSlider />
-      <Vision />
+      {/* <Vision /> */}
       <AboutUs />
       <Services />
       {/* <Gallery/> */}
       <Element name="quote">
         <Quote />
       </Element>
-      <WhatsappBtn/>
+      <WhatsappBtn />
       <Footer />
     </>
   );
