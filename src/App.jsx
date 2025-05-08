@@ -17,7 +17,6 @@ const TechConsulting = lazy(() => import("./pages/consulting/TechConsulting"));
 const PowerAudit = lazy(() => import("./pages/PowerAudit"));
 const GalleryPage = lazy(() => import("./pages/gallery/GalleryPage"));
 
-
 function App() {
   return (
     <>
@@ -34,74 +33,75 @@ function App() {
               </Suspense>
             }
           />
+
+          <Route path="services">
+            <Route
+              index
+              element={
+                <Suspense fallback={<Loader />}>
+                  <OurServices />
+                </Suspense>
+              }
+            />
+            <Route
+              path="solar-installation"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <Solar />
+                </Suspense>
+              }
+            />
+            <Route
+              path="ict-solutions"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <IctServices />
+                </Suspense>
+              }
+            />
+            <Route
+              path="cctv-and-access-control"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <Access />
+                </Suspense>
+              }
+            />
+            <Route
+              path="tech-consulting"
+              element={
+                <Suspense fallback={<Loader />}>
+                  <TechConsulting />
+                </Suspense>
+              }
+            />
+          </Route>
+          <Route
+            path="contact-us"
+            element={
+              <Suspense fallback={<Loader />}>
+                <Contact />
+              </Suspense>
+            }
+          />
+          <Route
+            path="gallery"
+            element={
+              <Suspense fallback={<Loader />}>
+                <GalleryPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="power-audit"
+            element={
+              <Suspense fallback={<Loader />}>
+                <PowerAudit />
+              </Suspense>
+            }
+          />
+          <Route path="*" element={<Error404Page />} />
         </Route>
-        <Route path="services">
-          <Route
-            index
-            element={
-              <Suspense fallback={<Loader />}>
-                <OurServices />
-              </Suspense>
-            }
-          />
-          <Route
-            path="solar-installation"
-            element={
-              <Suspense fallback={<Loader />}>
-                <Solar />
-              </Suspense>
-            }
-          />
-          <Route
-            path="ict-solutions"
-            element={
-              <Suspense fallback={<Loader />}>
-                <IctServices />
-              </Suspense>
-            }
-          />
-          <Route
-            path="cctv-and-access-control"
-            element={
-              <Suspense fallback={<Loader />}>
-                <Access />
-              </Suspense>
-            }
-          />
-          <Route
-            path="tech-consulting"
-            element={
-              <Suspense fallback={<Loader />}>
-                <TechConsulting />
-              </Suspense>
-            }
-          />
-        </Route>
-        <Route
-          path="contact-us"
-          element={
-            <Suspense fallback={<Loader />}>
-              <Contact />
-            </Suspense>
-          }
-        />
-        <Route
-          path="gallery"
-          element={
-            <Suspense fallback={<Loader />}>
-              <GalleryPage />
-            </Suspense>
-          }
-        />
-        <Route
-          path="power-audit"
-          element={
-            <Suspense fallback={<Loader />}>
-              <PowerAudit />
-            </Suspense>
-          }
-        />
-        <Route path="*" element={<Error404Page />} />
       </Routes>
     </>
   );

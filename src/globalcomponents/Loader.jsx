@@ -1,4 +1,3 @@
-import { ScaleLoader, SyncLoader } from "react-spinners";
 import src from "../assets/logo.png";
 const Loader = () => {
   return (
