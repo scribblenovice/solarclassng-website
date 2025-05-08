@@ -1,138 +1,98 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import src from "../assets/logo.png";
 import Submenu from "./Submenu";
 
-
 const NavBar = () => {
   const [openNav, setOpenNav] = useState(false);
-  const [scrollNumber, setScrollNumber] = useState(window.scrollY);
-  window.addEventListener("scroll", () => {
-    setScrollNumber(window.scrollY);
-  });
+  const [scrolled, setScrolled] = useState(false);
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
+  const location = useLocation();
 
-  const toggleSubmenu = () => {
-    setIsSubmenuOpen(!isSubmenuOpen);
-  };
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 100);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setOpenNav(false); // close nav on route change
+  }, [location]);
+
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services", hasSubmenu: true },
+    { name: "Power Audit", path: "/power-audit" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "Contact Us", path: "/contact-us" },
+  ];
+
   return (
     <>
+      {openNav && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 lg:hidden"
+          onClick={() => setOpenNav(false)}
+        ></div>
+      )}
       <nav
-        className={`${
-          scrollNumber > 100
-            ? "bg-white shadow-lg opacity-100"
-            : "bg-transparent opacity-0"
-        } transition-all ease-linear
-       duration-200 w-screen fixed top-0 z-50`}
+        className={`fixed siliguri top-0 w-full z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-black shadow-sm shadow-solar-blue"
+            : "bg-gray-600 bg-opacity-30"
+        }`}
       >
-        <div className="h-20 flex navbar justify-between mx-auto w-[90%] sm:w-[80%]">
-          <div className="w-36 static h-20 flex items-center">
-            <Link to="/" className="">
-              <img src={src} alt="" className=" h-16" />
-            </Link>
-          </div>
-          <div
-            className={`${
-              openNav
-                ? "openNav lg:-translate-x-0"
-                : "closeNav lg:translate-x-0"
-            } siliguri transition-all ease-linear duration-300  absolute top-[105px] left-0 bg-black lg:bg-transparent lg:static h-screen flex-col lg:flex-row lg:h-20 flex w-[70vw] sm:w-[60vw] md:w-[45vw] lg:w-[60%] lg:justify-between items-center ${
-              scrollNumber > 0 ? "text-white lg:text-black" : "text-white"
-            } font-medium`}
-          >
-            <Link
-              to={`/`}
-              className={`border-b-2 lg:border-b-0 py-5 lg:my-10 nav-link text-center relative text-base lg:text-xl w-full lg:w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center ${
-                scrollNumber > 0
-                  ? "hover:text-black hover:bg-white lg:hover:text-solar-blue after:bg-black lg:after:bg-solar-blue"
-                  : "lg:after:bg-white hover:text-black lg:hover:text-white hover:bg-white lg:hover:bg-transparent"
-              }  transition-all ease-linear duration-200`}
-            >
-              HOME
-            </Link>
-            {/* <Link
-              to={`/about-us`}
-              className={`border-b-2 lg:border-b-0 py-5 lg:my-10 nav-link text-center relative text-base lg:text-xl w-full lg:w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center ${
-                scrollNumber > 0
-                  ? "hover:text-black hover:bg-white lg:hover:text-solar-blue after:bg-black lg:after:bg-solar-blue"
-                  : "lg:after:bg-white hover:text-black lg:hover:text-white hover:bg-white lg:hover:bg-transparent"
-              }  transition-all ease-linear duration-200`}
-            >
-              ABOUT
-            </Link> */}
-              <Link
-                to={`/services`}
-                className={`border-b-2 lg:border-b-0 py-5 lg:my-10 nav-link text-center relative text-base lg:text-xl w-full lg:w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center ${
-                  scrollNumber > 0
-                    ? "hover:text-black hover:bg-white lg:hover:text-solar-blue after:bg-black lg:after:bg-solar-blue"
-                    : "lg:after:bg-white hover:text-black lg:hover:text-white hover:bg-white lg:hover:bg-transparent"
-                }  transition-all ease-linear duration-200`}
-                onMouseEnter={toggleSubmenu}
-                onMouseLeave={toggleSubmenu}
-              >
-                 SERVICES
-                <Submenu isOpen={isSubmenuOpen} onClose={toggleSubmenu} />
-              </Link>
-            <Link
-              to={`/contact-us`}
-              className={`border-b-2 lg:border-b-0 py-5 lg:my-10 nav-link text-center relative text-base lg:text-xl w-full lg:w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center ${
-                scrollNumber > 0
-                  ? "hover:text-black hover:bg-white lg:hover:text-solar-blue after:bg-black lg:after:bg-solar-blue"
-                  : "lg:after:bg-white hover:text-black lg:hover:text-white hover:bg-white lg:hover:bg-transparent"
-              }  transition-all ease-linear duration-200`}
-            >
-              CONTACT US
-            </Link>
-          </div>
+        <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
+          <Link to="/">
+            <img src={src} alt="Logo" className="h-12" />
+          </Link>
+
+          {/* Mobile Hamburger */}
           <button
-            className={`hamburger block lg:hidden ${openNav ? "active" : ""}`}
-            onClick={() => {
-              setOpenNav((prev) => {
-                return !prev;
-              });
-            }}
+            onClick={() => setOpenNav(!openNav)}
+            className="lg:hidden focus:outline-none"
           >
-            <div
-              className={`bar ${scrollNumber > 0 ? "bg-black" : "bg-white"}`}
-            ></div>
-            <div
-              className={`bar ${scrollNumber > 0 ? "bg-black" : "bg-white"}`}
-            ></div>
-            <div
-              className={`bar ${scrollNumber > 0 ? "bg-black" : "bg-white"}`}
-            ></div>
+            <div className="space-y-1">
+              <span className={`block h-0.5 w-6 bg-white`}></span>
+              <span className={`block h-0.5 w-6 bg-white`}></span>
+              <span className={`block h-0.5 w-6 bg-white`}></span>
+            </div>
           </button>
+
+          {/* Navigation Links */}
+          <ul
+            className={`
+            flex-col lg:flex-row lg:flex lg:static absolute left-0 top-20 w-4/5 lg:w-auto bg-black lg:bg-transparent text-white lg:text-black space-y-6 lg:space-y-0 lg:space-x-8 p-6 lg:p-0 transition-all duration-300 ease-in-out ${
+              openNav ? "flex pb-[1000px] lg:pb-0" : "closeNav lg:translate-x-0 pb-[1000px] lg:pb-0"
+            }`}
+          >
+            {navItems.map((item, idx) => (
+              <li
+                key={idx}
+                onMouseEnter={() => item.hasSubmenu && setIsSubmenuOpen(true)}
+                onMouseLeave={() => item.hasSubmenu && setIsSubmenuOpen(false)}
+                className="relative group"
+              >
+                <Link
+                  to={item.path}
+                  className={`text-white block text-lg font-medium hover:text-blue-600 transition-all ease-linear duration-300`}
+                >
+                  {item.name}
+                </Link>
+                {item.hasSubmenu && (
+                  <Submenu
+                    isOpen={isSubmenuOpen}
+                    onClose={() => setIsSubmenuOpen(false)}
+                  />
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
       </nav>
     </>
   );
 };
+
 export default NavBar;
-
-{
-  /* <ul
-          className={`z-0 absolute bg-black text-white w-screen left-0 flex flex-wrap justify-evenly ${
-            active
-              ? "service-menu-open top-20"
-              : "service-menu-close -translate-y-full top-0"
-          }`}
-        >
-          <li className=" text-center w-[50%] py-20 solar-bg bg-gray-700 font-bold">
-            <Link to="home">OFF-GRID SOLAR ENERGY SOLUTIONS</Link>
-          </li>
-
-          <li className="text-center w-[50%] py-20 ict-bg bg-gray-700 font-bold">
-            <Link to="home">
-              INFORMATION AND COMMUNCATION TECHNOLOGY SERVICES
-            </Link>
-          </li>
-          <li className="w-[50%] py-20 text-center tech-bg bg-gray-700 font-bold">
-            <Link to="home">TECHNOLOGY TRAINING AND CONSULTANCY</Link>
-          </li>
-          <li className="text-center w-[50%] py-20 access-bg bg-gray-700 font-bold">
-            <Link to="home">
-              ELECTRONIC SECURITY SURVEILLANCE AND ACCESS CONTROL SOLUTIONS
-            </Link>
-          </li>
-        </ul> */
-}

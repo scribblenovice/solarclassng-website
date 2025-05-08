@@ -8,7 +8,7 @@ import EmailFailed from "./EmailFailed";
 import EmailPassed from "./EmailPassed";
 import axios from "axios";
 
-const ContactForm = () => {
+const ContactForm = ({className}) => {
   const [shake, setShake] = useState(false);
   const [emailError, setEmailError] = useState(false);
   const [open, setOpen] = useState(false);
@@ -30,7 +30,6 @@ const ContactForm = () => {
       .join(" ");
   };
   const userName = capitalizeFirstLetter(formData.name);
-
   const payload = {
     name: userName.trim(),
     email: formData.email.trim(),
@@ -77,7 +76,6 @@ const ContactForm = () => {
       ...formData,
       [name]: value,
     });
-    console.log(formData);
   };
   const handleChange2 = (phone, e) => {
     setPhone(phone);
@@ -85,7 +83,6 @@ const ContactForm = () => {
       ...formData,
       phoneNumber: phone,
     });
-    console.log(phone);
   };
 
   const handleSubmit = (e) => {
@@ -96,6 +93,9 @@ const ContactForm = () => {
       setTimeout(() => {
         setShake(false);
       }, 300);
+      setTimeout(() => {
+        setFormErrors({});
+      }, 10000);
     }
     if (isValid) {
       setShake(false);
@@ -104,13 +104,12 @@ const ContactForm = () => {
       // Submit the form data or perform other actions
       axios
         .post(
-          "https://solarclassng-mail-service-rg38.onrender.com/receive-mail",
+          "https://solarclassng-mail-service-rg38.onrender.com/receive-email",
           {
             ...payload,
           }
         )
         .then((res) => {
-          console.log(res);
           if (res) {
             setPending(false);
             setOpen(true);
@@ -135,39 +134,27 @@ const ContactForm = () => {
             setPending(false);
             setOpen(true);
             setEmailError(true);
-            // The request was made and the server responded with a status code
-            // that falls out of the range of 2xx
-            // console.log(
-            //   "Server responded with a non-2xx status code:",
-            //   error.response.status
-            // );
-            // console.log('Data:', error.response.data);
           } else if (error.request) {
             // The request was made but no response was received
             setPending(false);
             setOpen(true);
             setEmailError(true);
-            // console.log("No response received");
           } else {
             setPending(false);
             setOpen(true);
             setEmailError(true);
-            // console.log("Error setting up the request:", error.message);
           }
-          // console.log("Error config:", error.config);
         });
     }
   };
   return (
     <>
-      <form
+      <div
         onSubmit={handleSubmit}
-        action="https://www.solarclassng.com/qservers_mail.php"
-        method="post"
-        className="ml-auto space-y-4 py-20"
+        className={`${className} ml-auto space-y-4 pt-10 lg:pt-20 siliguri`}
       >
         <div>
-          <label htmlFor="name" className="text-gray-800">
+          <label className="text-gray-900 text-opacity-80" htmlFor="name">
             Enter your Name
           </label>
           <GlobalText
@@ -182,9 +169,9 @@ const ContactForm = () => {
             errorClass="text-red-500"
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           <div>
-            <label htmlFor="email" className="text-gray-800">
+            <label className="text-gray-900 text-opacity-80" htmlFor="email">
               Enter your email Address
             </label>
             <GlobalText
@@ -200,7 +187,7 @@ const ContactForm = () => {
             />
           </div>
           <div>
-            <label htmlFor="phone" className="text-gray-800">
+            <label className="text-gray-900 text-opacity-80" htmlFor="phone">
               Enter your phone number
             </label>
             <PhoneNumber
@@ -214,7 +201,7 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="subject">Subject</label>
+          <label className="text-gray-900 text-opacity-80" htmlFor="subject">Subject</label>
           <GlobalText
             id={`subject`}
             inputType={`text`}
@@ -228,7 +215,7 @@ const ContactForm = () => {
           />
         </div>
         <div>
-          <label htmlFor="message">Enter your message</label>
+          <label className="text-gray-900 text-opacity-80" htmlFor="message">Enter your message</label>
           <GlobalTextArea
             value={formData.message}
             id="message"
@@ -254,7 +241,7 @@ const ContactForm = () => {
         >
           SEND
         </button>
-      </form>
+      </div>
       {pending && <EmailLoading />}
       {!pending && !emailError && (
         <EmailPassed

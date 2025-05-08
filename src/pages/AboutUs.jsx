@@ -1,55 +1,57 @@
 import { aboutInfo } from "../resources";
 import imgSrc from "../assets/about/solarclass2.webp";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   return (
     <>
-      <section
-        name="about"
-        className="py-5 lg:py-20 bg-gray-900 bg-blend-multiply aboutbg bg-cover bg-no-repeat bg-center bg-fixed"
-        id="about"
-      >
-        <div className="w-[90%] mx-auto py-10 lg:py-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-            <div className="w-full mb-10 lg:mb-0 ">
-              <div className="">
-                <h2 className="text-left lg:text-left text-white text-3xl font-black md:text-5xl anta">
-                  ABOUT US
+      <section name="about" className="py-20 lg:py-32">
+        <div className="w-[90%] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-28 gap-y-16 lg:gap-y-0">
+            <div className="grid place-items-center rounded-md">
+              <img
+                src={imgSrc}
+                alt=""
+                loading="lazy"
+                className="rounded-md h-[400px] md:h-[500px] border-solar-green border-[4px]"
+              />
+            </div>
+            <div className="w-full">
+              <div className="text-gray-900  grid grid-cols-1- gap-y-5">
+                <h2 className=" text-lg font-black anta flex items-center text-solar-blue">
+                  About Solar Class Ltd{" "}
+                  <div className="ml-3 inline-block w-[30px] h-[3px] bg-solar-blue"></div>
                 </h2>
-                <p className="siliguri my-5 text-lg leading-7 text-gray-300 font-light tracking-wide">
-                  Solarclass Ltd:{" "}
-                  <span className="font-extrabold">RC7336149</span>, is a wholly
-                  owned Nigerian company established by seasoned professionals
-                  and businessmen to provide best-in-class services in diverse
-                  technology areas to meet the needs of our clients. With
-                  operational base in Lagos, Nigeria, and presence in Canada,
-                  the company is poised to harness the more than 40 years
-                  cognate experience of its founders to deliver innovative
-                  solutions to residential customers, small, medium, and large
-                  businesses. Our abridged areas of business focus are:
+                <p className="anta font-extrabold text-3xl text-gray-900 leading-10 text-opacity-90">
+                  Providing Smart Technology Solutions for Home and Businesses
                 </p>
-                <div>
+                <p className="siliguri text-base tracking-wide text-gray-700 leading-7">
+                  Solarclass Ltd:{" "}
+                  <span className="font-extrabold">RC7336149</span> is a wholly
+                  owned Nigerian company established by seasoned to provide
+                  best-in-class services in diverse technology areas to meet the
+                  needs of our clients. Our abridged areas of business focus
+                  are:
+                </p>
+                <div className="grid grid-cols-2 gap-y-10 mt-5 lg:mt-0">
                   {aboutInfo.map((el) => {
                     return (
-                      <div className="flex items-center">
-                        {/* <Check classname={`inline w-5 h-5 mr-2`} /> */}
-                        <i class="ri-checkbox-circle-line text-solar-green text-xl mr-1"></i>
-                        <p className="text-lg leading-7 py-1 text-white siliguri font-light tracking-wide">
-                          {el.src}
+                      <div className="">
+                        <img src={el.img} className="w-14 h-14" alt="" />
+                        <p className=" pt-3 siliguri text-solar-blue text-opacity-90 font-bold">
+                          {el.description}
                         </p>
                       </div>
                     );
                   })}
                 </div>
+                <Link
+                  to="/contact-us"
+                  className="mt-2 p-2 w-fit bg-white border-2 hover:bg-solar-blue hover:text-white transition-all ease-linear duration-300 border-solar-blue text-center text-lg text-solar-blue font-semibold rounded-md cursor-pointer"
+                >
+                  Free Consultation
+                </Link>
               </div>
-            </div>
-            <div className=" grid place-items-center">
-              <img
-                src={imgSrc}
-                alt=""
-                loading="lazy"
-                className="aboutimg rounded-md h-[450px] md:h-[500px]"
-              />
             </div>
           </div>
         </div>

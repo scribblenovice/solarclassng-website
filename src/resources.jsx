@@ -1,49 +1,72 @@
+import solar from "/images/about-img/solar.png";
+import cctv from "/images/about-img/cctv.png";
+import ict from "/images/about-img/ict.png";
+import consulting from "/images/about-img/consulting.png";
+
+import solarServices from "/images/project-gallery/project4.jpg";
+import cctvServices from "/images/services/cctv.png";
+import ictServices from "/images/services/ict.png";
+import consultingServices from "/images/services/consulting.png";
+
 export const aboutInfo = [
   {
     id: 0,
     src: "Provision of off-grid solar energy solutions to homes",
+    description: "Solar installation",
+    img: solar,
   },
   {
     id: 1,
     src: "Provision of electronic security surveillance and access control solutions",
+    description: "CCTV installation",
+    img: cctv,
   },
   {
     id: 2,
     src: "Provision of Information and Communication technology services",
-  },
-  {
-    id: 3,
-    src: "  Equipment procurement and project management",
+    description: "ICT services",
+    img: ict,
   },
   {
     id: 4,
-    src: " Technology Training and consultancy services",
+    src: "Technology Training and consultancy services",
+    description: "Consulting services",
+    img: consulting,
   },
 ];
+
 export const servicesArray = [
   {
     id: 0,
+    title: "Solar Installation",
+    img: solarServices,
+    description:
+      "We design and install efficient solar energy systems tailored for residential, commercial, and industrial use.",
     to: "/services/solar-installation",
-    headerTxt: "OFF-GRID SOLAR ENERGY SOLUTIONS",
-    bg: "solarbg",
   },
   {
     id: 1,
+    title: "CCTV Installation",
+    img: cctvServices,
+    description:
+      "Secure your property with advanced CCTV solutions and professional installation services.",
     to: "/services/cctv-and-access-control",
-    headerTxt: "ELECTRONIC SECURITY SURVEILLANCE AND ACCESS CONTROL SOLUTIONS",
-    bg: "accessbg",
   },
   {
     id: 2,
+    title: "ICT Services",
+    img: ictServices,
+    description:
+      "From networking to system integration, we provide a wide range of ICT services to power your digital needs.",
     to: "/services/ict-solutions",
-    headerTxt: "INFORMATION AND COMMUNCATION TECHNOLOGY SERVICES",
-    bg: "ictbg",
   },
   {
     id: 3,
+    title: "Tech Consulting",
+    img: consultingServices,
+    description:
+      "Expert guidance on technology strategy, digital transformation, and infrastructure optimization.",
     to: "/services/tech-consulting",
-    headerTxt: "TECHNOLOGY TRAINING AND CONSULTANCY",
-    bg: "techbg",
   },
 ];
 

@@ -2,27 +2,27 @@ import NavBar from "../globalcomponents/NavBar";
 import AboutUs from "./AboutUs";
 import CarouselSlider from "../globalcomponents/Carousel";
 import Services from "./Services";
-import Vision from "./Vision";
 import Footer from "../globalcomponents/Footer";
 import Quote from "./Quote";
-import MailBtn from "../globalcomponents/MailBtn";
 import { Element } from "react-scroll";
-import WhatsappBtn from "../globalcomponents/WhatsappBtn";
-import Gallery from "../globalcomponents/Gallery";
+import Testimonial from "./testimonial/Testimonial";
 
 const HomePage = () => {
   return (
     <>
       <NavBar />
       <CarouselSlider />
-      {/* <Vision /> */}
-      <AboutUs />
-      <Services />
-      {/* <Gallery/> */}
+      <div className="relative">
+        <div className="absolute top-0 bottom-0 left-0 right-0 aboutbg bg-no-repeat bg-left bg-opacity-80 z-[-10]"></div>
+        <div className="absolute top-0 bottom-0 left-0 right-0 aboutbg bg-no-repeat bg-right-top bg-opacity-80 z-[-10]"></div>
+        <div className="absolute top-0 bottom-0 left-0 right-0 aboutbg bg-no-repeat bg-right-bottom bg-opacity-80 z-[-10]"></div>
+        <AboutUs />
+        <Services />
+      </div>
+      <Testimonial />
       <Element name="quote">
-        <Quote />
+        <Quote homepage={true}/>
       </Element>
-      <WhatsappBtn />
       <Footer />
     </>
   );

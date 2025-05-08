@@ -9,7 +9,6 @@ import {
 import CheckMark from "./CheckMark";
 
 const EmailPassed = ({ open, closeModal }) => {
-  //   const [open, setOpen] = useState(false);
   const inputRef = useRef(null);
   const setChecked = () => {
     if (inputRef.current) {
@@ -28,7 +27,7 @@ const EmailPassed = ({ open, closeModal }) => {
         open={open}
         handler={closeModal}
         size={"md"}
-        className="grid place-items-center py-10"
+        className="grid place-items-center py-5 lg:py-10"
       >
         <CheckMark inputRef={inputRef} checkClass="" />
         <DialogHeader className="text-center">YOUR MAIL HAS BEEN SENT!</DialogHeader>

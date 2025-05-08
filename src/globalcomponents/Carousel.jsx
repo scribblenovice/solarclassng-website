@@ -57,7 +57,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative h-[100vh]">
+    <div className="relative">
       <div className="carousel-container h-full">
         <div
           className="carousel-slides h-full"
@@ -66,7 +66,7 @@ const Carousel = () => {
           {slides.map((slide) => (
             <div
               key={slide.id}
-              className="flex items-center relative carousel-slide"
+              className="flex items-center relative carousel-slide py-32 md:py-48 lg:py-52"
             >
               <div
                 className={`${
@@ -75,29 +75,17 @@ const Carousel = () => {
                   slide.class
                 }`}
               ></div>
-                <div className="mx-auto text-white z-10 relative text-center w-[90%] flex flex-col justify-evenly">
-                  <p className="anta text-lg text-center md:text-xl">
+                <div className="mx-auto text-white z-10 relative text-center w-[95%] flex flex-col justify-evenly">
+                  <h1 className="anta text-lg text-center md:text-xl">
                     {slide.header}
-                  </p>
-                  <h1 className="mt-5 md:mt-7 font-black text-2xl md:text-5xl leading-10 lg:leading-[70px] mb-5 lg:mb-0">
-                    {slide.parTxt}
                   </h1>
+                  <p className="mt-5 md:mt-7 font-semibold text-xl md:text-3xl lg:text-5xl leading-10 lg:leading-[70px] mb-5 lg:mb-0 siliguri">
+                    {slide.parTxt}
+                  </p>
                 </div>
             </div>
           ))}
         </div>
-          <div>
-            <Link
-              to={`quote`}
-              spy={true}
-              smooth={true}
-              offset={-100}
-              duration={500}
-              className="bg-solar-blue text-center absolute text-lg text-white bottom-24 lg:bottom-28 left-1/2 font-semibold -translate-x-1/2 px-4 py-3 lg:px-5 rounded-md cursor-pointer"
-            >
-              GET A QUOTE
-            </Link>
-          </div>
       </div>
       <button
         onClick={prevSlide}

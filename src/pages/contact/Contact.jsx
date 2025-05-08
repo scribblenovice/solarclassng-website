@@ -8,11 +8,11 @@ const Contact = () => {
   return (
     <>
       <NavBar />
-      <div className="flex gap-y-5 flex-col justify-center items-center contact-page h-[60vh] lg:h-screen bg-no-repeat bg-cover bg-blend-multiply bg-gray-800 bg-center">
+      <div className="flex gap-y-5 flex-col justify-center items-center contact-page py-40 md:py-52 lg:py-60 bg-no-repeat bg-cover bg-blend-multiply bg-gray-800 bg-center">
         <h1 className="text-white text-3xl md:text-5xl font-bold text-center">
-          CONTACT US
+          Get in touch with us
         </h1>
-        <div className="text-white">
+        <div className="text-white siliguri">
           <Link
             to={`/`}
             className="mr-2 hover:text-solar-blue transition-all ease-linear duration-100"
@@ -30,44 +30,47 @@ const Contact = () => {
           <div>
             <div className="flex items-center gap-2 mb-3">
               <i className="ri-map-pin-line text-4xl text-solar-green"></i>{" "}
-              <span className="siliguri text-gray-700">
+              <span className="siliguri text-gray-700 text-sm lg:text-base">
                 #2,Close,off Monday Akunna Street, Greenfield Estate, off Ago
                 Palace Way, Okota, Isolo LCDA, Lagos, Nigeria.
               </span>
             </div>
             <div className="flex items-center gap-2 mb-3">
               <i className="ri-map-pin-line text-4xl text-solar-green"></i>{" "}
-              <span className="siliguri text-gray-700">
+              <span className="siliguri text-gray-700 text-sm lg:text-base">
                 15 Discovery Woods Villas, SW. Calgary, Alberta. T3H 5A6, Canada
               </span>
             </div>
           </div>
         </div>
-        <div className="min-h-[15rem] py-5 px-5 rounded-lg boxblur transition-all ease-linear duration-200">
+        <div className=" py-5 px-5 rounded-lg boxblur transition-all ease-linear duration-200">
           <div className="flex flex-col md:flex-row items-center h-full">
             <div className="w-full md:w-fit grid place-items-center my-3">
-              <i className="ri-mail-open-line text-6xl md:text-6xl lg:text-7xl text-solar-green"></i>
+              <i className="ri-mail-open-line text-4xl md:text-5xl lg:text-6xl text-solar-green"></i>
             </div>
             <div className="px-3 xl:px-1 h-[90px] max-w-full">
               <h2 className="text-center md:text-left text-solar-blue text-xl font-semibold anta ">
                 EMAIL ADDRESS
               </h2>
-              <span className="siliguri text-gray-700 text-center text-xl pt-1 inline-block">
-                contact@solarclassng.com
-              </span>
+              <div>
+                <span className="siliguri text-gray-700 text-center text-base lg:text-lg pt-1 inline-block whitespace-normal">
+                  {/* contact@solarclassng.com */}
+                  gasomba@solarclassng.com
+                </span>
+              </div>
             </div>
           </div>
         </div>
-        <div className="min-h-[15rem] py-5 px-5 rounded-lg boxblur transition-all ease-linear duration-200">
+        <div className="py-5 px-5 rounded-lg boxblur transition-all ease-linear duration-200">
           <div className="flex flex-col md:flex-row items-center h-full">
             <div className="w-full md:w-fit grid place-items-center my-3">
-              <i className="ri-whatsapp-line text-6xl md:text-6xl lg:text-7xl text-solar-green"></i>
+              <i className="ri-whatsapp-line text-4xl md:text-5xl lg:text-6xl text-solar-green"></i>
             </div>
             <div className="px-3 xl:px-1 h-[90px]">
               <h2 className="text-center md:text-left text-solar-blue text-xl font-semibold anta ">
                 PHONE
               </h2>
-              <span className="siliguri text-gray-700 text-center text-xl">
+              <span className="siliguri text-gray-700 text-center text-base lg:text-lg">
                 <span>NIG:</span>+234(0)802328694
                 <br />
                 <span>CAN:</span> +1 403 919 3009

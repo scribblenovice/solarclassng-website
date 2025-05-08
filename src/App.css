@@ -233,7 +233,8 @@ h1,
   /* background: url(../src/assets/logo.png); */
 }
 .aboutbg {
-  background: url(../src/assets/carousel/solar-install.webp);
+  background: url(/images/bg/africa.png);
+  filter: opacity(0.3);
 }
 .aboutimg {
   box-shadow: -10px 10px 0px var(--solar-green);
@@ -307,4 +308,7 @@ h1,
 }
 .contact-page {
   background-image: url(./assets/services/contactpage.webp);
+}
+.testimonialbg{
+  background-image: url(/images/testimony.png);
 }

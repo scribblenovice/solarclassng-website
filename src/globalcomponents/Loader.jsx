@@ -1,8 +1,9 @@
 import { ScaleLoader, SyncLoader } from "react-spinners";
+import src from "../assets/logo.png";
 const Loader = () => {
   return (
     <div className="bg-white h-screen w-screen flex justify-center items-center">
-      <ScaleLoader color="#005D9A" size={`30px`} margin={`20px`} />
+      <img src={src} alt="" className="animate-bounce w-24 h-auto opacity-80" />
     </div>
   );
 };

@@ -12,10 +12,10 @@ const Footer = () => {
               <Link to={`/`}>
                 <img src={src} alt="" className="h-20" loading="lazy" />
               </Link>
-              <p className="siliguri font-normal text-lg text-gray-400 tracking-wide leading-7 my-5">
-                To be a leading technology company underpinned by sustainable
-                development best practices within Nigeria and beyond. To deliver
-                world class services to our clients5
+              <p className="siliguri font-normal text-base lg:text-lg text-gray-400 tracking-wide leading-7 my-5">
+                We aim to be a leading technology company underpinned by
+                sustainable development best practices within Nigeria and
+                beyond. To deliver world class services to our clients
               </p>
             </div>
             <div className="pl-0 lg:pl-10">
@@ -57,7 +57,9 @@ const Footer = () => {
               <div className="flex mb-5">
                 <i className="ri-map-pin-line text-2xl text-solar-green rounded-full mr-3"></i>
                 <div className="">
-                  <h3 className="text-white siliguri text-base">Nigeria Address</h3>
+                  <h3 className="text-white siliguri text-base">
+                    Nigeria Address
+                  </h3>
                   <p className="text-gray-400 w-fit siliguri">
                     #2,Close,off Monday Akunna Street, Greenfield Estate, off
                     Ago Palace Way, Okota, Isolo LCDA, Lagos, Nigeria.
@@ -67,7 +69,9 @@ const Footer = () => {
               <div className="flex">
                 <i className="ri-map-pin-line text-2xl text-solar-green rounded-full mr-3"></i>
                 <div>
-                  <h3 className="text-white siliguri text-base">Canada Address</h3>
+                  <h3 className="text-white siliguri text-base">
+                    Canada Address
+                  </h3>
                   <p className="text-gray-400 w-fit siliguri">
                     15 Discovery Woods Villas, SW. Calgary, Alberta. T3H 5A6,
                     Canada
@@ -76,7 +80,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="mt-10 mx-auto grid grid-cols-1 md:grid-cols-2">
+          <div className="mt-10 mx-auto grid grid-cols-1 md:grid-cols-2 siliguri">
             <div className="bg-solar-blue flex justify-center items-center gap-y-5 py-4">
               <div className="flex w-80 items-center">
                 <div className="mr-5">
@@ -84,12 +88,12 @@ const Footer = () => {
                 </div>
                 <div>
                   <a
-                    href="mailto:contact@solarclassng.com"
-                    className="text-white text-xl"
+                    href="mailto:gasomba@solarclassng.com"
+                    className="text-white text-base md:text-lg lg:text-xl"
                   >
-                    contact@solarclassng.com
+                    gasomba@solarclassng.com
                   </a>
-                  <p className="text-gray-400">Reach out to us</p>
+                  <p className="text-gray-400 text-sm">Reach out to us</p>
                 </div>
               </div>
             </div>
@@ -101,16 +105,16 @@ const Footer = () => {
                 <div>
                   <a
                     href="tel:+234 (802) 328 6942"
-                    className="text-solar-blue text-xl"
+                    className="text-solar-blue text-base md:text-lg lg:text-xl"
                   >
                     +234 (802) 328 6942
                   </a>
-                  <p className="text-solar-blue">Give us a call</p>
+                  <p className="text-solar-blue text-sm">Give us a call</p>
                 </div>
               </div>
             </div>
           </div>
-          <p className="text-gray-400 text-center mt-5 text-base  md:text-lg">
+          <p className="text-gray-400 text-center mt-5 text-base  md:text-lg siliguri">
             {" "}
             &copy; SOLAR CLASS LTD 2024. All rights reserved.
           </p>
