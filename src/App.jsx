@@ -1,21 +1,22 @@
 import "./App.css";
-import { Suspense, lazy } from "react";
+import { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import Loader from "./globalcomponents/Loader";
 import ScrollToTop from "./globalcomponents/ScrollToTop";
 import WhatsappBtn from "./globalcomponents/WhatsappBtn";
 import BackToTopButton from "./globalcomponents/BackToTop";
+import { lazyWithDelay } from "./globalcomponents/LazyWithDelay";
 
-const HomePage = lazy(() => import("./pages/Homepage"));
-const Solar = lazy(() => import("./pages/solar-installation/Solar"));
-const Access = lazy(() => import("./pages/access-control/Access"));
-const Contact = lazy(() => import("./pages/contact/Contact"));
-const OurServices = lazy(() => import("./pages/Services/OurServices"));
-const Error404Page = lazy(() => import("./pages/Error404Page"));
-const IctServices = lazy(() => import("./pages/ict/IctServices"));
-const TechConsulting = lazy(() => import("./pages/consulting/TechConsulting"));
-const PowerAudit = lazy(() => import("./pages/PowerAudit"));
-const GalleryPage = lazy(() => import("./pages/gallery/GalleryPage"));
+const HomePage = lazyWithDelay(() => import("./pages/Homepage"));
+const Solar = lazyWithDelay(() => import("./pages/solar-installation/Solar"));
+const Access = lazyWithDelay(() => import("./pages/access-control/Access"));
+const Contact = lazyWithDelay(() => import("./pages/contact/Contact"));
+const OurServices = lazyWithDelay(() => import("./pages/Services/OurServices"));
+const Error404Page = lazyWithDelay(() => import("./pages/Error404Page"));
+const IctServices = lazyWithDelay(() => import("./pages/ict/IctServices"));
+const TechConsulting = lazyWithDelay(() => import("./pages/consulting/TechConsulting"));
+const PowerAudit = lazyWithDelay(() => import("./pages/PowerAudit"));
+const GalleryPage = lazyWithDelay(() => import("./pages/gallery/GalleryPage"));
 
 function App() {
   return (
